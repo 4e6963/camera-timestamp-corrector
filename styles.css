@@ -1,0 +1,26 @@
+body * {
+    display: flex;
+}
+
+body {
+    display: flex;
+    align-items: stretch;
+}
+#drop-zone {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed blue;
+}
+#drop-zone.file-hover {
+    flex: 1;
+    justify-content: center;
+    border: 2px solid blue;
+}
+#qr-code-zone {
+    flex: 1;
+    justify-content: center;
+}
+ #canvas{
+     position: fixed;
+ }

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <!--https://github.com/LazarSoft/jsqr-scanner-->
+        <script type="text/javascript" src="./dep/qr-scanner/grid.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/version.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/detector.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/formatinf.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/errorlevel.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/bitmat.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/datablock.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/bmparser.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/datamask.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/rsdecoder.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/gf256poly.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/gf256.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/decoder.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/qrcode.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/findpat.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/alignpat.js"></script>
+        <script type="text/javascript" src="./dep/qr-scanner/databr.js"></script>
+        <script type="text/javascript" src="./dep/qrcode/qrcode.min.js"></script>
+
+        <script src="./dep/exif-reader/exif-reader.js"></script>
+
+        <script type="module">
+            import { App } from './app.js';
+            import { UI } from './ui.js';
+            window.ui = new UI(new App());
+          </script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <div id="drop-zone" ondrop="ui.dropHandler(event);"
+            ondragover="ui.setFileHover(true, event);"
+            ondragleave="ui.setFileHover(false, event);">
+            <p id="drop-zone-text">Drag'n'Drop Jpeg here...</p>
+        </div>
+        <div id="qr-code-zone">
+            <canvas id="canvas"></canvas>
+        </div>
+    </body>
+</html>
