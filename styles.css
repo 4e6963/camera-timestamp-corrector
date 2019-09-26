@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     border: 2px dashed blue;
+    font-family: monospace;
 }
 #drop-zone.file-hover {
     flex: 1;

@@ -26,7 +26,7 @@ export class App {
     }
 
     compareDates = times => {
-        return new Promise(resolve => resolve(times.cameraTime - times.actualTime));
+        return new Promise(resolve => resolve(Math.round((times.cameraTime - times.actualTime) / 1000)))
     }
 
 
@@ -40,8 +40,8 @@ export class App {
 
 
     buildCommand = timeDifference => new Promise(resolve => {
-        const operator = timeDifference > -1 ? '+' : '';
-        resolve('exiftool -AllDates='+ operator + timeDifference + 's .')
+        const operator = timeDifference > -1 ? '+' : '-';
+        resolve(`exiftool -AllDates${operator}=${timeDifference}s *.jpg`)
     });
 
     readQrCode = file => {
